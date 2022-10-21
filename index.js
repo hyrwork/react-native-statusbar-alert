@@ -35,11 +35,13 @@ class StatusBarAlert extends Component {
 								? this.props.height +
 									(this.props.statusbarHeight || STATUS_BAR_HEIGHT)
 								: this.props.height,
-						duration: SLIDE_DURATION
+						duration: SLIDE_DURATION,
+						useNativeDriver: false,
 					}),
 					Animated.timing(this.state.opacity, {
 						toValue: 1,
-						duration: SLIDE_DURATION
+						duration: SLIDE_DURATION,
+						useNativeDriver: false,
 					})
 				]).start();
 			});
@@ -50,12 +52,14 @@ class StatusBarAlert extends Component {
 				if (Math.round(this.state.pulse._value) === 1) {
 					Animated.timing(this.state.pulse, {
 						toValue: 0,
-						duration: PULSE_DURATION
+						duration: PULSE_DURATION,
+						useNativeDriver: false,
 					}).start();
 				} else {
 					Animated.timing(this.state.pulse, {
 						toValue: 1,
-						duration: PULSE_DURATION
+						duration: PULSE_DURATION,
+						useNativeDriver: false,
 					}).start();
 				}
 			}
@@ -78,11 +82,13 @@ class StatusBarAlert extends Component {
 									? nextProps.height +
 										(this.props.statusbarHeight || STATUS_BAR_HEIGHT)
 									: nextProps.height,
-							duration: SLIDE_DURATION
+							duration: SLIDE_DURATION,
+							useNativeDriver: false,
 						}),
 						Animated.timing(this.state.opacity, {
 							toValue: 1,
-							duration: SLIDE_DURATION
+							duration: SLIDE_DURATION,
+							useNativeDriver: false,
 						})
 					]).start();
 				});
@@ -93,11 +99,13 @@ class StatusBarAlert extends Component {
 					Animated.parallel([
 						Animated.timing(this.state.height, {
 							toValue: 0,
-							duration: SLIDE_DURATION
+							duration: SLIDE_DURATION,
+							useNativeDriver: false,
 						}),
 						Animated.timing(this.state.opacity, {
 							toValue: 0,
-							duration: SLIDE_DURATION
+							duration: SLIDE_DURATION,
+							useNativeDriver: false,
 						})
 					]).start();
 				});
